@@ -18,19 +18,19 @@ public class SelectionSorter {
     }
 
     public static void selectionSort(int[] arr){
-        for(int i = 0; i< arr.length;i++){
+        for(int i = 0; i < arr.length; i++){
             int min = arr[i];
-            int second = i;
-            for (int j = i + 1; j < arr.length; j++){
-                if(arr[j] < min){
-                    min = arr[j];
-                    second = j;
+            int minId = i;
+            for(int j = i + 1; j < arr.length; j++){
+                if(min > arr[j]){
+                min = arr[j];
+                minId = j;
                 }
             }
-            if(min != i){
+            if(minId != i){
                 int temp = arr[i];
-                arr[i] = arr[second];
-                arr[second] = temp;
+                arr[i] = arr[minId];
+                arr[minId] = temp;
             }
         }
     }
